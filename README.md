@@ -4,6 +4,8 @@
 
 ## What is This
 
+Completely lifted from https://git.sr.ht/~bt/alpine-linux-setup
+
 An absolutely bare-bones Sway Desktop Alpine installation.
 
 This is meant to be a minimal build to help you get started with Alpine Linux.
@@ -59,7 +61,7 @@ You will need to edit some of the content inside the `setup.sh` file. Most impor
 ## Auto Personalization
 * login as `root`
 * `apk add git`
-* `git clone https://git.sr.ht/~bt/alpine-linux-setup`
+* `git clone git@github.com:jeremysj/alpine-linux-setup.git`
 * `cd alpine-linux-setup`
 * `ash welcome.sh` or `ash setup.sh` if your repos are already set
 
