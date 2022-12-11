@@ -51,6 +51,9 @@ cat ./jsj/.profile >> /home/jsj/.profile
 echo "====================> Include default wallpaper"
 cp -r ./jsj/wallpaper /home/jsj/
 
+echo "====================> Fix permissions on /home/$USER"
+chown -R jsj:jsj /home/jsj
+
 echo "====================> Configuring services to launch at boot"
 rc-update add seatd
 rc-service seatd start
