@@ -2,10 +2,10 @@
 
 echo "========== Alpine Linux Setup  ================"
 
-echo "====================> Add sudo & create new user (bt)"
+echo "====================> Add sudo & create new user (jsj)"
 apk add sudo
-adduser -g "Bradley Taunt" bt
-adduser bt wheel
+adduser -g "Bradley Taunt" jsj
+adduser jsj wheel
 
 echo "====================> Running setup-xorg-base"
 setup-xorg-base
@@ -28,40 +28,40 @@ apk add nwg-launchers-bar
 apk add sway sway-doc xwayland 
 apk add swaylock swaylockd swaybg swayidle 
 apk add ttf-dejavu elogind polkit-elogind autotiling 
-apk add qutebrowser aerc tut thunar azote
+apk add qutebrowser thunar azote
 apk add foot
 apk add seatd
 
-echo "====================> Add user bt to proper groups"
-adduser bt input
-adduser bt video
+echo "====================> Add user jsj to proper groups"
+adduser jsj input
+adduser jsj video
 
 echo "====================> Update main config files"
-cp -r ./bt/sway /home/bt/.config/
-cp -r ./bt/waybar /home/bt/.config/
-cp -r ./bt/foot /home/bt/.config/
-cp -r ./bt/qutebrowser /home/bt/.config/
-cp -r ./bt/nwg-drawer /home/bt/.config/
-cp -r ./bt/nwg-launchers /home/bt/.config/
-cp -r ./bt/nwg-look /home/bt/.config/
-cp -r ./bt/wofi /home/bt/.config/
-cp -r ./bt/mimeapps.list /etc/xdg/
-cat ./bt/.profile >> /home/bt/.profile
+cp -r ./jsj/sway /home/jsj/.config/
+cp -r ./jsj/waybar /home/jsj/.config/
+cp -r ./jsj/foot /home/jsj/.config/
+cp -r ./jsj/qutebrowser /home/jsj/.config/
+cp -r ./jsj/nwg-drawer /home/jsj/.config/
+cp -r ./jsj/nwg-launchers /home/jsj/.config/
+cp -r ./jsj/nwg-look /home/jsj/.config/
+cp -r ./jsj/wofi /home/jsj/.config/
+cp -r ./jsj/mimeapps.list /etc/xdg/
+cat ./jsj/.profile >> /home/jsj/.profile
 
 echo "====================> Include default wallpaper"
-cp -r ./bt/wallpaper /home/bt/
+cp -r ./jsj/wallpaper /home/jsj/
 
 echo "====================> Configuring services to launch at boot"
 rc-update add seatd
 rc-service seatd start
-adduser bt seat
+adduser jsj seat
 rc-service dbus start
 rc-update add dbus
 rc-service iwd start
 rc-update add iwd
 
 echo "====================> Optional: Connect to a wifi hotspot"
-iwctl station wlan0 connect bchhh
+#iwctl station wlan0 connect bchhh
 
 echo "====================>  Setup complete"
 echo "You can now reboot your machine."
